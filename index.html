@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Kamrul Hasan - Marriage Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        /* Theme Switcher (Top Left) */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .theme-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+        .theme-btn:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .theme-btn.active {
+            background: linear-gradient(45deg, #0077ff, #00ccff);
+            border-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 122, 255, 0.6);
+            transform: scale(1.1);
+        }
+
+        /* Global Controls (Bottom Left) */
+        .global-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .icon-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
+        }
+        .icon-btn:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+            color: #0077ff;
+            background: #fff;
+        }
+
+        #content-frame {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn" data-file="marriage_biodata_kamrul_hasan.html" title="Theme 1">1</button>
+        <button class="theme-btn" data-file="marriage_biodata_kamrul_hasan_two.html" title="Theme 2">2</button>
+        <button class="theme-btn active" data-file="marriage_biodata_kamrul_hasan_three.html" title="Theme 3">3</button>
+        <button class="theme-btn" data-file="marriage_biodata_kamrul_hasan_four.html" title="Theme 4">4</button>
+    </div>
+
+    <!-- Global controls -->
+    <div class="global-controls">
+        <button class="icon-btn" id="globalThemeBtn" title="Toggle Dark/Light Mode">🌙</button>
+        <button class="icon-btn" id="globalPrintBtn" title="Print Biodata">🖨️</button>
+        <button class="icon-btn" id="globalSaveBtn" title="Save as PDF">💾</button>
+    </div>
+
+    <iframe id="content-frame" src="marriage_biodata_kamrul_hasan_three.html"></iframe>
+
+    <script>
+        const iframe = document.getElementById('content-frame');
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const globalThemeBtn = document.getElementById('globalThemeBtn');
+        const globalPrintBtn = document.getElementById('globalPrintBtn');
+        const globalSaveBtn = document.getElementById('globalSaveBtn');
+
+        // --- Theme Switching Logic ---
+        themeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                themeButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const themeFile = button.dataset.file;
+                if (themeFile) {
+                    iframe.src = themeFile;
+                }
+            });
+        });
+
+        // --- More Robust Global Controls Logic ---
+
+        const getIframeWindow = () => {
+            return iframe.contentWindow || null;
+        }
+
+        const syncThemeIcon = () => {
+            const iWindow = getIframeWindow();
+            if (iWindow) {
+                try {
+                    const iframeBody = iWindow.document.body;
+                    const isDark = iframeBody.classList.contains('dark') || iframeBody.classList.contains('dark-mode');
+                    globalThemeBtn.textContent = isDark ? '🌞' : '🌙';
+                } catch (e) {
+                    console.error("Cannot access iframe content for theme sync:", e);
+                }
+            }
+        };
+
+        iframe.addEventListener('load', () => {
+            // Give the iframe's own scripts a moment to run before syncing
+            setTimeout(syncThemeIcon, 100);
+        });
+
+        globalThemeBtn.addEventListener('click', () => {
+            const iWindow = getIframeWindow();
+            if (!iWindow) {
+                alert("Theme content is not available yet.");
+                return;
+            }
+            try {
+                const iframeBody = iWindow.document.body;
+                // Toggle classes for all supported themes
+                iframeBody.classList.toggle('dark');
+                iframeBody.classList.toggle('dark-mode');
+                
+                // Update the global button icon
+                syncThemeIcon();
+
+                // Also update the icon on the local button inside the iframe, if it exists
+                const localBtn = iWindow.document.getElementById('themeToggle') || iWindow.document.getElementById('toggleMode');
+                if (localBtn) {
+                    localBtn.textContent = globalThemeBtn.textContent;
+                }
+            } catch (e) {
+                alert("Could not toggle theme due to a security restriction. This should work when hosted on a web server.");
+                console.error("Error toggling theme:", e);
+            }
+        });
+
+        globalPrintBtn.addEventListener('click', () => {
+            const iWindow = getIframeWindow();
+            if (iWindow) {
+                try {
+                    iWindow.print();
+                } catch (e) {
+                    alert("Could not print due to a security restriction.");
+                }
+            } else {
+                alert("Content not loaded.");
+            }
+        });
+
+        globalSaveBtn.addEventListener('click', () => {
+            alert('To save the biodata, please use the Print button (🖨️) and select "Save as PDF" as the destination in the print dialog.');
+        });
+    </script>
+</body>
+</html>
