@@ -23,6 +23,7 @@
 
     body {
       margin: 0;
+      padding: 40px 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, var(--bg-light), #e0f7ff);
       color: var(--text-light);
@@ -82,6 +83,7 @@
     }
 
     p, li { line-height: 1.7; }
+    ul { padding-left: 20px; }
 
     .toggle-btn {
       position: fixed;
@@ -151,6 +153,32 @@
       white-space: nowrap;
       z-index: 0;
       user-select: none;
+    }
+
+    @media (max-width: 768px) {
+        body { padding: 0; }
+        .container {
+            width: 100%;
+            padding: 20px;
+            margin: 0;
+            border-radius: 0;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        .toggle-btn {
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            top: 15px;
+            right: 15px;
+        }
+        .calligraphy {
+            font-size: 80px;
+        }
     }
   </style>
 </head>

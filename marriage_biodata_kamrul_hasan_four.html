@@ -23,6 +23,7 @@
       color: var(--text-color);
       transition: background 0.6s, color 0.6s;
       overflow-x: hidden;
+      padding-bottom: 80px; /* Add padding to avoid overlap with corner icons */
     }
 
     :root {
@@ -79,6 +80,7 @@
 
     ul {
       margin-left: 20px;
+      padding-left: 0;
     }
 
     /* Floating bubbles */
@@ -101,7 +103,7 @@
     .corner-icons {
       position: fixed;
       bottom: 20px;
-      left: 20px;
+      right: 20px; /* Changed from left for better layout */
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -142,7 +144,7 @@
     .calligraphy {
       position: fixed;
       top: 20px;
-      right: 20px;
+      left: 20px; /* Changed from right */
       font-size: 4rem;
       color: rgba(0, 255, 200, 0.07);
       font-family: 'Scheherazade New', serif;
@@ -154,6 +156,38 @@
     @keyframes shimmer {
       from { opacity: 0.4; }
       to { opacity: 0.9; }
+    }
+
+    @media (max-width: 768px) {
+        body { padding: 0; padding-bottom: 80px; }
+        h1 {
+            font-size: 1.6rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .card {
+            width: 95%;
+            padding: 20px;
+            margin: 10px;
+        }
+        .section-title {
+            font-size: 1.2rem;
+        }
+        .corner-icons {
+            bottom: 15px;
+            right: 15px;
+            gap: 10px;
+        }
+        .icon-btn {
+            width: 42px;
+            height: 42px;
+            font-size: 18px;
+        }
+        .calligraphy {
+            font-size: 2.5rem;
+            top: 15px;
+            left: 15px;
+        }
     }
   </style>
 </head>

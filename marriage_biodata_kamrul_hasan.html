@@ -74,7 +74,7 @@
 
     /* Expected partner card */
     .expect{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(142,161,255,0.03), rgba(124,231,198,0.02));border:1px solid rgba(255,255,255,0.02)}
-    ul{margin:8px 0 0 18px}
+    ul{margin:8px 0 0 18px; padding-left: 18px;}
 
     /* Footer / actions */
     .actions{display:flex;gap:12px;margin-top:16px}
@@ -95,8 +95,12 @@
     @media (max-width:860px){
       .grid{grid-template-columns:1fr}
       .cols{grid-template-columns:1fr}
-      .avatar{width:96px;height:96px}
+      .avatar{width:96px;height:96px; margin: 0 auto;}
       .container{padding:18px;margin:20px}
+      .toprow{flex-direction: column; text-align: center; gap: 15px;}
+      .toprow .title, .toprow div[style*="text-align:right"] {text-align: center !important;}
+      h1 {font-size: 18px;}
+      .actions{justify-content: center;}
     }
 
     /* ========== Micro animations ========== */
@@ -111,8 +115,7 @@
     .chip{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);font-size:13px}
 
     /* info highlight */
-    .meta{display:flex;gap:8px;align-items:center}
-    .meta b{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:6px 8px;border-radius:8px;color:#04223a}
+    .meta{display:flex;gap:8px;align-items:center; justify-content: center;}
 
     /* subtle entry animation */
     .card{transform-origin:top center;animation:entrance .6s cubic-bezier(.2,.9,.2,1)}
