@@ -12,16 +12,32 @@
             background-color: #f0f2f5;
         }
 
-        /* Theme Switcher (Top Left) */
-        .theme-switcher {
+        /* --- CONTROLS --- */
+        .theme-switcher, .global-controls {
             position: fixed;
-            top: 20px;
-            left: 20px;
             z-index: 1001;
             display: flex;
             flex-direction: column;
             gap: 12px;
+            /* Add transition for the hide/show effect */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
+        .theme-switcher {
+            top: 20px;
+            left: 20px;
+        }
+        .global-controls {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        /* Class to hide UI elements on mobile */
+        .ui-hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.8);
+        }
+
         .theme-btn {
             width: 44px;
             height: 44px;
@@ -49,16 +65,6 @@
             transform: scale(1.1);
         }
 
-        /* Global Controls (Bottom Left) */
-        .global-controls {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1001;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
         .icon-btn {
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(0,0,0,0.05);
@@ -86,6 +92,27 @@
             height: 100vh;
             border: none;
         }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .theme-switcher, .global-controls {
+                left: 15px; /* Closer to edge */
+                gap: 10px;
+            }
+            .theme-switcher { top: 15px; }
+            .global-controls { bottom: 15px; }
+
+            .theme-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 15px;
+            }
+            .icon-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -112,84 +139,73 @@
         const globalThemeBtn = document.getElementById('globalThemeBtn');
         const globalPrintBtn = document.getElementById('globalPrintBtn');
         const globalSaveBtn = document.getElementById('globalSaveBtn');
+        const themeSwitcher = document.querySelector('.theme-switcher');
+        const globalControls = document.querySelector('.global-controls');
 
         // --- Theme Switching Logic ---
         themeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 themeButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                const themeFile = button.dataset.file;
-                if (themeFile) {
-                    iframe.src = themeFile;
-                }
+                iframe.src = button.dataset.file;
             });
         });
 
-        // --- More Robust Global Controls Logic ---
-
-        const getIframeWindow = () => {
-            return iframe.contentWindow || null;
-        }
+        // --- Global Controls & Mobile UI Toggle Logic ---
+        const getIframeWindow = () => iframe.contentWindow || null;
 
         const syncThemeIcon = () => {
             const iWindow = getIframeWindow();
             if (iWindow) {
                 try {
-                    const iframeBody = iWindow.document.body;
-                    const isDark = iframeBody.classList.contains('dark') || iframeBody.classList.contains('dark-mode');
+                    const isDark = iWindow.document.body.classList.contains('dark') || iWindow.document.body.classList.contains('dark-mode');
                     globalThemeBtn.textContent = isDark ? '🌞' : '🌙';
-                } catch (e) {
-                    console.error("Cannot access iframe content for theme sync:", e);
-                }
+                } catch (e) { /* Ignore */ }
+            }
+        };
+
+        const setupMobileUIToggle = () => {
+            const iWindow = getIframeWindow();
+            if (iWindow && window.innerWidth <= 768) {
+                iWindow.document.body.addEventListener('click', () => {
+                    themeSwitcher.classList.toggle('ui-hidden');
+                    globalControls.classList.toggle('ui-hidden');
+                });
             }
         };
 
         iframe.addEventListener('load', () => {
-            // Give the iframe's own scripts a moment to run before syncing
-            setTimeout(syncThemeIcon, 100);
+            setTimeout(() => {
+                syncThemeIcon();
+                setupMobileUIToggle();
+            }, 100); // Delay to allow iframe scripts to run
         });
 
-        globalThemeBtn.addEventListener('click', () => {
+        globalThemeBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent this click from triggering the body click listener
             const iWindow = getIframeWindow();
-            if (!iWindow) {
-                alert("Theme content is not available yet.");
-                return;
-            }
+            if (!iWindow) return alert("Theme content is not available yet.");
             try {
                 const iframeBody = iWindow.document.body;
-                // Toggle classes for all supported themes
                 iframeBody.classList.toggle('dark');
                 iframeBody.classList.toggle('dark-mode');
-                
-                // Update the global button icon
                 syncThemeIcon();
-
-                // Also update the icon on the local button inside the iframe, if it exists
                 const localBtn = iWindow.document.getElementById('themeToggle') || iWindow.document.getElementById('toggleMode');
-                if (localBtn) {
-                    localBtn.textContent = globalThemeBtn.textContent;
-                }
+                if (localBtn) localBtn.textContent = globalThemeBtn.textContent;
             } catch (e) {
-                alert("Could not toggle theme due to a security restriction. This should work when hosted on a web server.");
-                console.error("Error toggling theme:", e);
+                alert("Could not toggle theme due to a security restriction.");
             }
         });
 
-        globalPrintBtn.addEventListener('click', () => {
+        globalPrintBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             const iWindow = getIframeWindow();
-            if (iWindow) {
-                try {
-                    iWindow.print();
-                } catch (e) {
-                    alert("Could not print due to a security restriction.");
-                }
-            } else {
-                alert("Content not loaded.");
-            }
+            if (iWindow) try { iWindow.print(); } catch (e) { alert("Could not print."); }
         });
 
-        globalSaveBtn.addEventListener('click', () => {
-            alert('To save the biodata, please use the Print button (🖨️) and select "Save as PDF" as the destination in the print dialog.');
+        globalSaveBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            alert('To save, use the Print button (🖨️) and select "Save as PDF".');
         });
     </script>
 </body>
