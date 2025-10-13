@@ -1,4 +1,3 @@
-
 const biodata = {
   en: {
     title: "Md. Kamrul Hasan - Marriage Bio Data",
