@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         eduListContainer.innerHTML = '';
         data.education.forEach(edu => {
           const p = document.createElement('p');
-          p.innerHTML = `<strong>${labels.degree || 'Degree:'}</strong> ${edu.degree}: ${edu.institution} (<strong>${labels.result || 'Result:'}</strong> ${edu.result})`;
+          p.innerHTML = `<strong>${edu.degree}:</strong> ${edu.institution}<br><em>Result: ${edu.result}, Passing Year: ${edu.passingYear}</em>`;
           eduListContainer.appendChild(p);
         });
       }
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
           eduUl.innerHTML = '';
           data.education.forEach(edu => {
               const li = document.createElement('li');
-              li.innerHTML = `<strong>${labels.degree || 'Degree:'}</strong> ${edu.degree}: ${edu.institution} (<strong>${labels.result || 'Result:'}</strong> ${edu.result})`;
+              li.innerHTML = `<strong>${edu.degree}:</strong> ${edu.institution}<br><em>Result: ${edu.result}, Passing Year: ${edu.passingYear}</em>`;
               eduUl.appendChild(li);
           });
       }
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
           Object.entries(data.partnerExpectations).forEach(([key, value]) => {
               const li = document.createElement('li');
               const formattedKey = labels[key] || (key.charAt(0).toUpperCase() + key.slice(1));
-              li.innerHTML = `<strong>${formattedKey}:</strong> ${value}`;
+              li.innerHTML = `<strong>${formattedKey}</strong> ${value}`;
               partnerList.appendChild(li);
           });
       }

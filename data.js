@@ -1,9 +1,9 @@
 
 const biodata = {
   en: {
-    title: "Md. Kamrul Hasan - Marriage Biodata",
+    title: "Md. Kamrul Hasan - Marriage Bio Data",
     labels: {
-      marriageBiodata: "Marriage Biodata",
+      marriageBiodata: "Marriage Bio Data",
       name: "Name:",
       dob: "Date of Birth:",
       age: "Age:",
@@ -60,17 +60,20 @@ const biodata = {
       {
         degree: "B.Sc. in Computer Science & Engineering",
         institution: "Daffodil International University",
-        result: "A"
+        result: "CGPA 3.83",
+        passingYear: 2021
       },
       {
         degree: "HSC",
         institution: "Bogra Cantonment Public School & College",
-        result: "A"
+        result: "GPA 4.67",
+        passingYear: 2016
       },
       {
         degree: "SSC (Dakhil)",
         institution: "Bogra Cadet International Madrasah",
-        result: "A+"
+        result: "GPA 5.00",
+        passingYear: 2014
       }
     ],
     profession: {
@@ -155,17 +158,20 @@ const biodata = {
       {
         degree: "বি.এস.সি ইন কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং",
         institution: "ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি",
-        result: "এ"
+        result: "সিজিপিএ ৩.৮৩",
+        passingYear: "২০২১"
       },
       {
         degree: "এইচএসসি",
         institution: "বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজ",
-        result: "এ"
+        result: "জিপিএ ৪.৬৭",
+        passingYear: "২০১৬"
       },
       {
         degree: "এসএসসি (দাখিল)",
         institution: "বগুড়া ক্যাডেট ইন্টারন্যাশনাল মাদরাসা",
-        result: "এ+"
+        result: "জিপিএ ৫.০০",
+        passingYear: "২০১৪"
       }
     ],
     profession: {
