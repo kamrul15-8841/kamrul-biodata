@@ -126,13 +126,15 @@
 
     <!-- Global controls -->
     <div class="global-controls">
+        <button class="icon-btn" id="globalLangBtn" title="Switch Language">BN</button>
         <button class="icon-btn" id="globalThemeBtn" title="Toggle Dark/Light Mode">🌙</button>
         <button class="icon-btn" id="globalPrintBtn" title="Print Biodata">🖨️</button>
         <button class="icon-btn" id="globalSaveBtn" title="Save as PDF">💾</button>
     </div>
 
-    <iframe id="content-frame" src="marriage_biodata_kamrul_hasan_three.html"></iframe>
+    <iframe id="content-frame" src="marriage_biodata_kamrul_hasan_three.html?lang=en"></iframe>
 
+    <script src="data.js"></script>
     <script>
         const iframe = document.getElementById('content-frame');
         const themeButtons = document.querySelectorAll('.theme-btn');
@@ -142,12 +144,15 @@
         const themeSwitcher = document.querySelector('.theme-switcher');
         const globalControls = document.querySelector('.global-controls');
 
+        const globalLangBtn = document.getElementById('globalLangBtn');
+        let currentLang = 'en'; // Default language
+
         // --- Theme Switching Logic ---
         themeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 themeButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                iframe.src = button.dataset.file;
+                iframe.src = `${button.dataset.file}?lang=${currentLang}`;
             });
         });
 
@@ -164,6 +169,18 @@
             }
         };
 
+        const syncLanguage = () => {
+            const iWindow = getIframeWindow();
+            if (iWindow) {
+                try {
+                    iWindow.currentLang = currentLang;
+                    iWindow.renderContent(currentLang);
+                } catch (e) {
+                    console.error("Failed to sync language with iframe:", e);
+                }
+            }
+        };
+
         const setupMobileUIToggle = () => {
             const iWindow = getIframeWindow();
             if (iWindow && window.innerWidth <= 768) {
@@ -177,8 +194,19 @@
         iframe.addEventListener('load', () => {
             setTimeout(() => {
                 syncThemeIcon();
+                syncLanguage();
                 setupMobileUIToggle();
             }, 100); // Delay to allow iframe scripts to run
+        });
+
+        globalLangBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentLang = currentLang === 'en' ? 'bn' : 'en';
+            globalLangBtn.textContent = currentLang === 'en' ? 'BN' : 'EN';
+            document.title = biodata[currentLang].title;
+            // Reload iframe with the new language parameter
+            const activeTheme = document.querySelector('.theme-btn.active').dataset.file;
+            iframe.src = `${activeTheme}?lang=${currentLang}`;
         });
 
         globalThemeBtn.addEventListener('click', (e) => {
