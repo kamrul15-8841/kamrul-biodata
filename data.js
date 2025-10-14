@@ -54,7 +54,7 @@ const biodata = {
       // familyProperty: "We have our own house & some agricultural land and under-construction 3-storey building in my hometown.",
       // familyProperty: "Own house & agricultural land, under-construction 3-storey building",
       familyProperty: "We have our own house in the village, a little agricultural land. The construction of a 3-storey building is underway, the work of the 1st floor is almost completed. There is space in the municipal area of ​​the upazila for future houses.",
-      familyEnvironment: "Religious, simple, respectful, socially responsible."
+      familyEnvironment: "Religious, simple, respectful, socially responsible. There is a religious environment, everyone tries to follow prayers, fasting and the basic practices of Islam."
     },
     education: [
       {
@@ -96,7 +96,7 @@ const biodata = {
       height: "5 feet – 5 feet 4 inches",
       complexion: "Bright Brown / Fair / Bright Fair",
       education: "At least SSC / HSC / Graduate",
-      qualities: "Religious, Namaz & Roza practitioner, good character, family-oriented, polite, patient, and responsible."
+      qualities: "Religious, Namaz & Roza practitioner, good character, modest and shy, family-oriented, polite, patient, and responsible."
     }
   },
   bn: {
@@ -152,8 +152,8 @@ const biodata = {
       mother: "মোছাঃ কহিনুর খানম (গৃহিণী)",
       siblings: "ভাইদের মধ্যে বড়। এক ভাই নোমান গ্রুপে ইলেক্ট্রিক্যাল ইঞ্জিনিয়ার। আরেক ভাই বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজে এইচএসসি অধ্যয়নরত।",
       // familyProperty: "বাড়িতে আমাদের নিজস্ব বাড়ি ও কিছু কৃষি জমি এবং নির্মাণাধীন ৩ তলা ভবন রয়েছে।",
-      familyProperty: "গ্রামে নিজস্ব বাড়ি রয়েছে। সামান্য কৃষিজমি আছে।৩ তলা ভবনের নির্মাণকাজ চলছে, ১ তলার কাজ প্রায় সমাপ্ত। উপজেলায় পৌর এলাকায় ভবিষ্যতে বাড়ি করার জন্য জায়গা রয়েছে।",
-      familyEnvironment: "ধার্মিক, সরল, শ্রদ্ধাশীল, সামাজিকভাবে দায়িত্বশীল।"
+      familyProperty: "গ্রামে নিজস্ব বাড়ি রয়েছে। সামান্য কৃষিজমি আছে। ৩ তলা ভবনের নির্মাণকাজ চলছে, ১ তলার কাজ প্রায় সমাপ্ত। উপজেলায় পৌর এলাকায় ভবিষ্যতে বাড়ি করার জন্য জায়গা রয়েছে।",
+      familyEnvironment: "ধার্মিক, সরল, শ্রদ্ধাশীল, সামাজিকভাবে দায়িত্বশীল। দ্বীনি পরিবেশ বিদ্যমান, সবাই নামাজ-রোজা ও ইসলামের মৌলিক আমলগুলো মেনে চলার চেষ্টা করেন।"
     },
     education: [
       {
@@ -195,7 +195,7 @@ const biodata = {
       height: "৫ ফুট – ৫ ফুট ৪ ইঞ্চি",
       complexion: "উজ্জ্বল শ্যামলা / ফর্সা / উজ্জ্বল ফর্সা",
       education: "অন্তত এসএসসি / এইচএসসি / স্নাতক",
-      qualities: "ধার্মিক, নামাজ ও রোজা পালনকারী,ที่ดี চরিত্র, পরিবারমুখী, ভদ্র, ধৈর্যশীল, এবং দায়িত্বশীল।"
+      qualities: "ধার্মিক, নামাজ ও রোজা পালনকারী, চরিত্রবান, পর্দানশীল এবং লাজুক, পরিবারমুখী, ভদ্র, ধৈর্যশীল এবং দায়িত্বশীল।"
     }
   }
 };
