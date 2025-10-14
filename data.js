@@ -52,7 +52,8 @@ const biodata = {
       mother: "Most. Kohinoor Khanom (Homemaker)",
       siblings: "Eldest among brothers. One brother is an Electrical Engineer at Noman Group. Another brother is studying HSC at Bogra Cantonment Public School & College.",
       // familyProperty: "We have our own house & some agricultural land and under-construction 3-storey building in my hometown.",
-      familyProperty: "Own house & agricultural land, under-construction 3-storey building",
+      // familyProperty: "Own house & agricultural land, under-construction 3-storey building",
+      familyProperty: "We have our own house in the village, a little agricultural land. The construction of a 3-storey building is underway, the work of the 1st floor is almost completed. There is space in the municipal area of ​​the upazila for future houses.",
       familyEnvironment: "Religious, simple, respectful, socially responsible."
     },
     education: [
@@ -150,7 +151,8 @@ const biodata = {
       guardianMobile: "০১৭১৮৩১৪৫৮৫",
       mother: "মোছাঃ কহিনুর খানম (গৃহিণী)",
       siblings: "ভাইদের মধ্যে বড়। এক ভাই নোমান গ্রুপে ইলেক্ট্রিক্যাল ইঞ্জিনিয়ার। আরেক ভাই বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজে এইচএসসি অধ্যয়নরত।",
-      familyProperty: "বাড়িতে আমাদের নিজস্ব বাড়ি ও কিছু কৃষি জমি এবং নির্মাণাধীন ৩ তলা ভবন রয়েছে।",
+      // familyProperty: "বাড়িতে আমাদের নিজস্ব বাড়ি ও কিছু কৃষি জমি এবং নির্মাণাধীন ৩ তলা ভবন রয়েছে।",
+      familyProperty: "গ্রামে নিজস্ব বাড়ি রয়েছে। সামান্য কৃষিজমি আছে।৩ তলা ভবনের নির্মাণকাজ চলছে, ১ তলার কাজ প্রায় সমাপ্ত। উপজেলায় পৌর এলাকায় ভবিষ্যতে বাড়ি করার জন্য জায়গা রয়েছে।",
       familyEnvironment: "ধার্মিক, সরল, শ্রদ্ধাশীল, সামাজিকভাবে দায়িত্বশীল।"
     },
     education: [
