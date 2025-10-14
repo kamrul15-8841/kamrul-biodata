@@ -63,13 +63,13 @@ const biodata = {
         passingYear: 2021
       },
       {
-        degree: "HSC",
+        degree: "HSC (Science)",
         institution: "Bogra Cantonment Public School & College",
         result: "GPA 4.67",
         passingYear: 2016
       },
       {
-        degree: "SSC (Dakhil)",
+        degree: "SSC (Dakhil) (Science)",
         institution: "Bogra Cadet International Madrasah",
         result: "GPA 5.00",
         passingYear: 2014
@@ -161,13 +161,13 @@ const biodata = {
         passingYear: "২০২১"
       },
       {
-        degree: "এইচএসসি",
+        degree: "এইচ.এস.সি (বিজ্ঞান)",
         institution: "বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজ",
         result: "জিপিএ ৪.৬৭",
         passingYear: "২০১৬"
       },
       {
-        degree: "এসএসসি (দাখিল)",
+        degree: "এস.এস.সি (দাখিল) (বিজ্ঞান)",
         institution: "বগুড়া ক্যাডেট ইন্টারন্যাশনাল মাদরাসা",
         result: "জিপিএ ৫.০০",
         passingYear: "২০১৪"
