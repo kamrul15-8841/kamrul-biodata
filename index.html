@@ -19,7 +19,6 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            /* Add transition for the hide/show effect */
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
         .theme-switcher {
@@ -32,11 +31,11 @@
         }
 
         /* Class to hide UI elements on mobile */
-        .ui-hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: scale(0.8);
-        }
+        /*.ui-hidden {*/
+        /*    opacity: 0;*/
+        /*    pointer-events: none;*/
+        /*    transform: scale(0.8);*/
+        /*}*/
 
         .theme-btn {
             width: 44px;
@@ -93,14 +92,31 @@
             border: none;
         }
 
+        .bottom-nav {
+            display: none; /* Hidden by default on desktop */
+        }
+
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
             .theme-switcher, .global-controls {
-                left: 15px; /* Closer to edge */
+                display: none;
+            }
+
+            .bottom-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: transparent;
+                padding: 10px 0;
+                z-index: 1002;
                 gap: 10px;
             }
-            .theme-switcher { top: 15px; }
-            .global-controls { bottom: 15px; }
+            /*.theme-switcher { top: 15px; }*/
+            /*.global-controls { bottom: 15px; }*/
 
             .theme-btn {
                 width: 40px;
@@ -129,7 +145,16 @@
         <button class="icon-btn" id="globalLangBtn" title="Switch Language">BN</button>
         <button class="icon-btn" id="globalThemeBtn" title="Toggle Dark/Light Mode">🌙</button>
         <button class="icon-btn" id="globalPrintBtn" title="Print Biodata">🖨️</button>
-        <button class="icon-btn" id="globalSaveBtn" title="Save as PDF">💾</button>
+    </div>
+
+    <div class="bottom-nav">
+        <button class="theme-btn" data-file="marriage_biodata_kamrul_hasan.html" title="Theme 1">1</button>
+        <button class="theme-btn" data-file="marriage_biodata_kamrul_hasan_two.html" title="Theme 2">2</button>
+        <button class="theme-btn active" data-file="marriage_biodata_kamrul_hasan_three.html" title="Theme 3">3</button>
+        <button class="theme-btn" data-file="marriage_biodata_kamrul_hasan_four.html" title="Theme 4">4</button>
+        <button class="icon-btn" id="globalThemeBtnMobile" title="Toggle Dark/Light Mode">🌙</button>
+        <button class="icon-btn" id="globalLangBtnMobile" title="Switch Language">BN</button>
+        <button class="icon-btn" id="globalPrintBtnMobile" title="Print Biodata">🖨️</button>
     </div>
 
     <iframe id="content-frame" src="marriage_biodata_kamrul_hasan_three.html?lang=en"></iframe>
@@ -140,11 +165,14 @@
         const themeButtons = document.querySelectorAll('.theme-btn');
         const globalThemeBtn = document.getElementById('globalThemeBtn');
         const globalPrintBtn = document.getElementById('globalPrintBtn');
-        const globalSaveBtn = document.getElementById('globalSaveBtn');
+        const globalLangBtn = document.getElementById('globalLangBtn');
         const themeSwitcher = document.querySelector('.theme-switcher');
         const globalControls = document.querySelector('.global-controls');
 
-        const globalLangBtn = document.getElementById('globalLangBtn');
+        const globalThemeBtnMobile = document.getElementById('globalThemeBtnMobile');
+        const globalPrintBtnMobile = document.getElementById('globalPrintBtnMobile');
+        const globalLangBtnMobile = document.getElementById('globalLangBtnMobile');
+
         let currentLang = 'en'; // Default language
 
         // --- Theme Switching Logic ---
@@ -165,6 +193,7 @@
                 try {
                     const isDark = iWindow.document.body.classList.contains('dark') || iWindow.document.body.classList.contains('dark-mode');
                     globalThemeBtn.textContent = isDark ? '🌞' : '🌙';
+                    globalThemeBtnMobile.textContent = isDark ? '🌞' : '🌙';
                 } catch (e) { /* Ignore */ }
             }
         };
@@ -181,36 +210,25 @@
             }
         };
 
-        const setupMobileUIToggle = () => {
-            const iWindow = getIframeWindow();
-            if (iWindow && window.innerWidth <= 768) {
-                iWindow.document.body.addEventListener('click', () => {
-                    themeSwitcher.classList.toggle('ui-hidden');
-                    globalControls.classList.toggle('ui-hidden');
-                });
-            }
-        };
-
         iframe.addEventListener('load', () => {
             setTimeout(() => {
                 syncThemeIcon();
                 syncLanguage();
-                setupMobileUIToggle();
-            }, 100); // Delay to allow iframe scripts to run
+            }, 100);
         });
 
-        globalLangBtn.addEventListener('click', (e) => {
+        function handleLangSwitch(e) {
             e.stopPropagation();
             currentLang = currentLang === 'en' ? 'bn' : 'en';
             globalLangBtn.textContent = currentLang === 'en' ? 'BN' : 'EN';
+            globalLangBtnMobile.textContent = currentLang === 'en' ? 'BN' : 'EN';
             document.title = biodata[currentLang].title;
-            // Reload iframe with the new language parameter
             const activeTheme = document.querySelector('.theme-btn.active').dataset.file;
             iframe.src = `${activeTheme}?lang=${currentLang}`;
-        });
+        }
 
-        globalThemeBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent this click from triggering the body click listener
+        function handleThemeToggle(e) {
+            e.stopPropagation();
             const iWindow = getIframeWindow();
             if (!iWindow) return alert("Theme content is not available yet.");
             try {
@@ -223,18 +241,23 @@
             } catch (e) {
                 alert("Could not toggle theme due to a security restriction.");
             }
-        });
+        }
 
-        globalPrintBtn.addEventListener('click', (e) => {
+        function handlePrint(e) {
             e.stopPropagation();
             const iWindow = getIframeWindow();
             if (iWindow) try { iWindow.print(); } catch (e) { alert("Could not print."); }
-        });
+        }
 
-        globalSaveBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            alert('To save, use the Print button (🖨️) and select "Save as PDF".');
-        });
+        globalLangBtn.addEventListener('click', handleLangSwitch);
+        globalLangBtnMobile.addEventListener('click', handleLangSwitch);
+
+        globalThemeBtn.addEventListener('click', handleThemeToggle);
+        globalThemeBtnMobile.addEventListener('click', handleThemeToggle);
+
+        globalPrintBtn.addEventListener('click', handlePrint);
+        globalPrintBtnMobile.addEventListener('click', handlePrint);
+
     </script>
 </body>
 </html>
