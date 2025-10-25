@@ -92,10 +92,11 @@ const biodata = {
       ]
     },
     partnerExpectations: {
-      age: "18 – 23 years",
-      height: "5 feet – 5 feet 4 inches",
+      // age: "18 – 23 years",
+      // height: "5 feet – 5 feet 4 inches",
       complexion: "Bright Brown / Fair / Bright Fair",
-      education: "At least SSC / HSC / Graduate",
+      // education: "At least SSC / HSC / Graduate",
+      education: "SSC / HSC / Graduate",
       qualities: "Religious, Namaz & Roza practitioner, good character, modest and shy, family-oriented, polite, patient, and responsible."
     }
   },
@@ -191,10 +192,11 @@ const biodata = {
       ]
     },
     partnerExpectations: {
-      age: "১৮ – ২৩ বছর",
-      height: "৫ ফুট – ৫ ফুট ৪ ইঞ্চি",
+      // age: "১৮ – ২৩ বছর",
+      // height: "৫ ফুট – ৫ ফুট ৪ ইঞ্চি",
       complexion: "উজ্জ্বল শ্যামলা / ফর্সা / উজ্জ্বল ফর্সা",
-      education: "অন্তত এসএসসি / এইচএসসি / স্নাতক",
+      // education: "অন্তত এসএসসি / এইচএসসি / স্নাতক",
+      education: "এসএসসি / এইচএসসি / স্নাতক",
       qualities: "ধার্মিক, নামাজ ও রোজা পালনকারী, চরিত্রবান, পর্দানশীল এবং লাজুক, পরিবারমুখী, ভদ্র, ধৈর্যশীল এবং দায়িত্বশীল।"
     }
   }
