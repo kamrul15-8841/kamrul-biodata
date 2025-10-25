@@ -5,7 +5,7 @@ const biodata = {
       marriageBiodata: "Marriage Bio Data",
       name: "Name:",
       dob: "Date of Birth:",
-      age: "Age:",
+      // age: "Age:",
       height: "Height:",
       weight: "Weight:",
       complexion: "Complexion:",
@@ -13,6 +13,7 @@ const biodata = {
       presentAddress: "Present Address:",
       maritalStatus: "Marital Status:",
       personalMobile: "Personal Mobile:",
+      personalEmail: "Personal Email:",
       father: "Father:",
       guardianMobile: "Guardian Mobile:",
       mother: "Mother:",
@@ -37,14 +38,15 @@ const biodata = {
     personalInfo: {
       name: "Md. Kamrul Hasan",
       dob: "21/01/1999",
-      age: "27 years",
+      // age: "27 years",
       height: "5 feet 4 inches",
       weight: "65 KG (Approx)",
       complexion: "Bright Brown",
-      permanentAddress: "Hamin Damin, Vatharia, Raigonj, Sirajganj",
+      permanentAddress: "Hamin Damin, Vatharia-6720, Raigonj, Sirajganj",
       presentAddress: "Pagar, Tongi, Gazipur",
       maritalStatus: "Unmarried",
-      personalMobile: "01771883916"
+      personalMobile: "01771883916",
+      personalEmail: "hkamrul703@gmail.com"
     },
     familyInfo: {
       father: "Md. Ashraful Alam (Retired Army)",
@@ -106,7 +108,7 @@ const biodata = {
       marriageBiodata: " বিবাহের বায়োডাটা",
       name: "নাম:",
       dob: "জন্ম তারিখ:",
-      age: "বয়স:",
+      // age: "বয়স:",
       height: "উচ্চতা:",
       weight: "ওজন:",
       complexion: "গায়ের রঙ:",
@@ -114,6 +116,7 @@ const biodata = {
       presentAddress: "বর্তমান ঠিকানা:",
       maritalStatus: "বৈবাহিক অবস্থা:",
       personalMobile: "ব্যক্তিগত মোবাইল:",
+      personalEmail: "ব্যক্তিগত ইমেইল:",
       father: "পিতা:",
       guardianMobile: "অভিভাবকের মোবাইল:",
       mother: "মাতা:",
@@ -138,14 +141,15 @@ const biodata = {
     personalInfo: {
       name: "মোঃ কামরুল হাসান",
       dob: "২১/০১/১৯৯৯",
-      age: "২৭ বছর",
+      // age: "২৭ বছর",
       height: "৫ ফুট ৪ ইঞ্চি",
       weight: "৬৫ কেজি (আনুমানিক)",
       complexion: "উজ্জ্বল শ্যামলা",
-      permanentAddress: "হামিন দামিন, ভাঠারিয়া, রায়গঞ্জ, সিরাজগঞ্জ",
+      permanentAddress: "হামিন দামিন, ভাতহাড়িয়া-৬৭২০, রায়গঞ্জ, সিরাজগঞ্জ",
       presentAddress: "পাগার, টঙ্গী, গাজীপুর",
       maritalStatus: "অবিবাহিত",
-      personalMobile: "০১৭৭১৮৮৩৯১৬"
+      personalMobile: "০১৭৭১৮৮৩৯১৬",
+      personalEmail: "hkamrul703@gmail.com"
     },
     familyInfo: {
       father: "মোঃ আশরাফুল আলম (অবসরপ্রাপ্ত সেনাবাহিনী)",

@@ -51,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Personal Info
     setText('name-label', labels.name || 'Name:');
     setText('dob-label', labels.dob || 'Date of Birth:');
-    setText('age-label', labels.age || 'Age:');
+    if (labels.age) {
+        setText('age-label', labels.age);
+    }
     setText('height-label', labels.height || 'Height:');
     setText('weight-label', labels.weight || 'Weight:');
     setText('complexion-label', labels.complexion || 'Complexion:');
@@ -59,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setText('present-address-label', labels.presentAddress || 'Present Address:');
     setText('marital-status-label', labels.maritalStatus || 'Marital Status:');
     setText('personal-mobile-label', labels.personalMobile || 'Personal Mobile:');
+    setText('personal-email-label', labels.personalEmail || 'Personal Email:');
 
     // Family Info
     setText('father-name-label', labels.father || 'Father:');
@@ -86,7 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
       setText('present-address', data.personalInfo.presentAddress);
       setText('marital-status', data.personalInfo.maritalStatus);
       setText('personal-mobile', data.personalInfo.personalMobile);
+      setText('personal-email', data.personalInfo.personalEmail);
       setText('contact-mobile', data.personalInfo.personalMobile); // For different themes
+      setText('contact-email', data.personalInfo.personalEmail); // For different themes
       setHTML('header-name', data.personalInfo.name); // For themes with name in header
       setHTML('header-title', `${data.profession.designation} at ${data.profession.organization} • B.Sc. in CSE — ${data.education[0].institution}`);
     }
