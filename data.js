@@ -79,7 +79,7 @@ const biodata = {
       }
     ],
     profession: {
-      designation: "Application Developer",
+      designation: "Application Developer (Software Engineer)",
       organization: "Noman Group",
       salary: "Around ৳40,000",
       responsibilities: "Web & Mobile App Development, Software Customization, Database Design & Maintenance."
@@ -181,7 +181,7 @@ const biodata = {
       }
     ],
     profession: {
-      designation: "অ্যাপ্লিকেশন ডেভেলপার",
+      designation: "অ্যাপ্লিকেশন ডেভেলপার (সফটওয়্যার ইঞ্জিনিয়ার)",
       organization: "নোমান গ্রুপ",
       salary: "প্রায় ৪০,০০০ টাকা",
       responsibilities: "ওয়েব ও মোবাইল অ্যাপ ডেভেলপমেন্ট, সফটওয়্যার কাস্টমাইজেশন, ডাটাবেজ ডিজাইন ও রক্ষণাবেক্ষণ।"
