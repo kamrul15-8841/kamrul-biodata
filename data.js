@@ -37,7 +37,7 @@ const biodata = {
     },
     personalInfo: {
       name: "Md. Kamrul Hasan",
-      dob: "21/01/1999",
+      dob: "21/01/1999 (NID & Certificate)",
       // age: "27 years",
       height: "5 feet 4 inches",
       weight: "65 KG (Approx)",
@@ -51,7 +51,7 @@ const biodata = {
     familyInfo: {
       father: "Md. Ashraful Alam (Retired Army)",
       guardianMobile: "01718314585",
-      mother: "Most. Kohinoor Khanom (Homemaker)",
+      mother: "Most. Kohinur Khanom (Homemaker)",
       siblings: "Eldest among brothers. One brother is an Electrical Engineer at Noman Group. Another brother is studying HSC at Bogra Cantonment Public School & College.",
       // familyProperty: "We have our own house & some agricultural land and under-construction 3-storey building in my hometown.",
       // familyProperty: "Own house & agricultural land, under-construction 3-storey building",
