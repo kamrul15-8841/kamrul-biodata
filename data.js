@@ -81,24 +81,24 @@ const biodata = {
     profession: {
       designation: "Application Developer (Software Engineer)",
       organization: "Noman Group",
-      salary: "Around ৳40,000",
+      salary: "Around ৳35,000+ Alhamdulillah",
       responsibilities: "Web & Mobile App Development, Software Customization, Database Design & Maintenance."
     },
     religiousViews: "Alhamdulillah, I regularly perform Salah and Sawm. I wish to maintain Islamic values in family and marital life.",
     hobbies: {
       list: [
-        "Reading Islamic books and learning new skills.",
-        "Dislike: Lies, cheating, arrogance.",
-        "Like: Simplicity, truthfulness, responsibility.",
-        "Dream: To build a balanced family based on Deen and Dunya, and be a socially responsible person."
+        "My hobby is reading Islamic books, learning necessary things, and acquiring knowledge about technology.",
+        "I like to spend leisure time with my family.",
+        "I do not like to waste time unnecessarily.",
+        "My dream is to be successful in my Deen and worldly life and to build a beautiful family."
       ]
     },
     partnerExpectations: {
       // age: "18 – 23 years",
       // height: "5 feet – 5 feet 4 inches",
       complexion: "Bright Brown / Fair / Bright Fair",
-      // education: "At least SSC / HSC / Graduate",
-      education: "SSC / HSC / Graduate",
+      education: "Hafeza / Alema / General / Alia / MBBS",
+      // education: "SSC / HSC / Graduate",
       qualities: "Religious, Namaz & Roza practitioner, good character, modest and shy, family-oriented, polite, patient, and responsible."
     }
   },
@@ -140,7 +140,7 @@ const biodata = {
     },
     personalInfo: {
       name: "মোঃ কামরুল হাসান",
-      dob: "২১/০১/১৯৯৯",
+      dob: "২১/০১/১৯৯৯ (NID & Certificate)",
       // age: "২৭ বছর",
       height: "৫ ফুট ৪ ইঞ্চি",
       weight: "৬৫ কেজি (আনুমানিক)",
@@ -183,7 +183,7 @@ const biodata = {
     profession: {
       designation: "অ্যাপ্লিকেশন ডেভেলপার (সফটওয়্যার ইঞ্জিনিয়ার)",
       organization: "নোমান গ্রুপ",
-      salary: "প্রায় ৪০,০০০ টাকা",
+      salary: "প্রায় ৩৫,০০০+ টাকা আলহামদুলিল্লাহ।",
       responsibilities: "ওয়েব ও মোবাইল অ্যাপ ডেভেলপমেন্ট, সফটওয়্যার কাস্টমাইজেশন, ডাটাবেজ ডিজাইন ও রক্ষণাবেক্ষণ।"
     },
     religiousViews: "আলহামদুলিল্লাহ, আমি নিয়মিত সালাত ও সাওম পালন করি। আমি পরিবার ও দাম্পত্য জীবনে ইসলামিক মূল্যবোধ বজায় রাখতে চাই।",
@@ -200,7 +200,7 @@ const biodata = {
       // height: "৫ ফুট – ৫ ফুট ৪ ইঞ্চি",
       complexion: "উজ্জ্বল শ্যামলা / ফর্সা / উজ্জ্বল ফর্সা",
       // education: "অন্তত এসএসসি / এইচএসসি / স্নাতক",
-      education: "এসএসসি / এইচএসসি / স্নাতক",
+      education: "হাফেজা / আলেমা / জেনারেন / আলিয়া / MBBS",
       qualities: "ধার্মিক, নামাজ ও রোজা পালনকারী, চরিত্রবান, পর্দানশীল এবং লাজুক, পরিবারমুখী, ভদ্র, ধৈর্যশীল এবং দায়িত্বশীল।"
     }
   }

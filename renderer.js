@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let currentLang = 'en'; // Default language
+  // let currentLang = 'en'; // Default language
+  let currentLang = 'bn'; // Default language
 
   // Function to render content based on language
   window.renderContent = (lang) => {

@@ -142,7 +142,7 @@
 
     <!-- Global controls -->
     <div class="global-controls">
-        <button class="icon-btn" id="globalLangBtn" title="Switch Language">BN</button>
+        <button class="icon-btn" id="globalLangBtn" title="Switch Language">EN</button>
         <button class="icon-btn" id="globalThemeBtn" title="Toggle Dark/Light Mode">🌙</button>
         <button class="icon-btn" id="globalPrintBtn" title="Print Biodata">🖨️</button>
     </div>
@@ -153,11 +153,11 @@
         <button class="theme-btn active" data-file="marriage_biodata_kamrul_hasan_three.html" title="Theme 3">3</button>
         <button class="theme-btn" data-file="marriage_biodata_kamrul_hasan_four.html" title="Theme 4">4</button>
         <button class="icon-btn" id="globalThemeBtnMobile" title="Toggle Dark/Light Mode">🌙</button>
-        <button class="icon-btn" id="globalLangBtnMobile" title="Switch Language">BN</button>
+        <button class="icon-btn" id="globalLangBtnMobile" title="Switch Language">EN</button>
         <button class="icon-btn" id="globalPrintBtnMobile" title="Print Biodata">🖨️</button>
     </div>
 
-    <iframe id="content-frame" src="marriage_biodata_kamrul_hasan_three.html?lang=en"></iframe>
+    <iframe id="content-frame" src="marriage_biodata_kamrul_hasan_three.html?lang=bn"></iframe>
 
     <script src="data.js"></script>
     <script>
@@ -173,7 +173,7 @@
         const globalPrintBtnMobile = document.getElementById('globalPrintBtnMobile');
         const globalLangBtnMobile = document.getElementById('globalLangBtnMobile');
 
-        let currentLang = 'en'; // Default language
+        let currentLang = 'bn'; // Default language
 
         // --- Theme Switching Logic ---
         themeButtons.forEach(button => {
