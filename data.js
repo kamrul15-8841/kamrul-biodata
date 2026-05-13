@@ -40,7 +40,7 @@ const biodata = {
       dob: "21/01/1999 (NID & Certificate)",
       // age: "27 years",
       height: "5 feet 4 inches",
-      weight: "65 KG (Approx)",
+      weight: "65 KG",
       complexion: "Bright Brown",
       permanentAddress: "Hamin Damin, Vatharia-6720, Raigonj, Sirajganj",
       presentAddress: "Pagar, Tongi, Gazipur",
@@ -97,7 +97,7 @@ const biodata = {
       // age: "18 – 23 years",
       // height: "5 feet – 5 feet 4 inches",
       complexion: "Bright Brown / Fair / Bright Fair",
-      education: "Hafeza / Alema / General / Alia / MBBS",
+      education: "SSC/Dakhil OR HSC/Alim OR Honors/MBBS/B.Sc OR Hafeza/Alema",
       // education: "SSC / HSC / Graduate",
       qualities: "Religious, Namaz & Roza practitioner, good character, modest and shy, family-oriented, polite, patient, and responsible."
     }
@@ -143,10 +143,10 @@ const biodata = {
       dob: "২১/০১/১৯৯৯ (NID & Certificate)",
       // age: "২৭ বছর",
       height: "৫ ফুট ৪ ইঞ্চি",
-      weight: "৬৫ কেজি (আনুমানিক)",
+      weight: "৬৫ কেজি",
       complexion: "উজ্জ্বল শ্যামলা",
       permanentAddress: "হামিন দামিন, ভাতহাড়িয়া-৬৭২০, রায়গঞ্জ, সিরাজগঞ্জ",
-      presentAddress: "পাগার, টঙ্গী, গাজীপুর",
+      presentAddress: "টঙ্গী, গাজীপুর, ঢাকা",
       maritalStatus: "অবিবাহিত",
       personalMobile: "০১৭৭১৮৮৩৯১৬",
       personalEmail: "hkamrul703@gmail.com"
@@ -155,7 +155,8 @@ const biodata = {
       father: "মোঃ আশরাফুল আলম (অবসরপ্রাপ্ত সেনাবাহিনী)",
       guardianMobile: "০১৭১৮৩১৪৫৮৫",
       mother: "মোছাঃ কহিনুর খানম (গৃহিণী)",
-      siblings: "ভাইদের মধ্যে বড়। এক ভাই নোমান গ্রুপে ইলেক্ট্রিক্যাল ইঞ্জিনিয়ার। আরেক ভাই বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজে এইচএসসি অধ্যয়নরত।",
+      siblings: "আমরা তিন ভাই; আমি সবার বড়। মেজো ভাই নোমান গ্রুপে কর্মরত এবং ছোট ভাই এইচ.এস.সি পড়ছে।",
+      // siblings: "ভাইদের মধ্যে বড়। এক ভাই নোমান গ্রুপে ইলেক্ট্রিক্যাল ইঞ্জিনিয়ার। আরেক ভাই বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজে এইচএসসি অধ্যয়নরত।",
       // familyProperty: "বাড়িতে আমাদের নিজস্ব বাড়ি ও কিছু কৃষি জমি এবং নির্মাণাধীন ৩ তলা ভবন রয়েছে।",
       familyProperty: "গ্রামে নিজস্ব বাড়ি রয়েছে। সামান্য কৃষিজমি আছে। ৩ তলা ভবনের নির্মাণকাজ চলছে, ১ তলার কাজ প্রায় সমাপ্ত। উপজেলায় পৌর এলাকায় ভবিষ্যতে বাড়ি করার জন্য জায়গা রয়েছে।",
       familyEnvironment: "ধার্মিক, সরল, শ্রদ্ধাশীল, সামাজিকভাবে দায়িত্বশীল। দ্বীনি পরিবেশ বিদ্যমান, সবাই নামাজ-রোজা ও ইসলামের মৌলিক আমলগুলো মেনে চলার চেষ্টা করেন।"
@@ -183,7 +184,7 @@ const biodata = {
     profession: {
       designation: "অ্যাপ্লিকেশন ডেভেলপার (সফটওয়্যার ইঞ্জিনিয়ার)",
       organization: "নোমান গ্রুপ",
-      salary: "প্রায় ৩৫,০০০+ টাকা আলহামদুলিল্লাহ।",
+      // salary: "প্রায় ৩৫,০০০+ টাকা আলহামদুলিল্লাহ।",
       responsibilities: "ওয়েব ও মোবাইল অ্যাপ ডেভেলপমেন্ট, সফটওয়্যার কাস্টমাইজেশন, ডাটাবেজ ডিজাইন ও রক্ষণাবেক্ষণ।"
     },
     religiousViews: "আলহামদুলিল্লাহ, আমি নিয়মিত সালাত ও সাওম পালন করি। আমি পরিবার ও দাম্পত্য জীবনে ইসলামিক মূল্যবোধ বজায় রাখতে চাই।",
@@ -200,7 +201,7 @@ const biodata = {
       // height: "৫ ফুট – ৫ ফুট ৪ ইঞ্চি",
       complexion: "উজ্জ্বল শ্যামলা / ফর্সা / উজ্জ্বল ফর্সা",
       // education: "অন্তত এসএসসি / এইচএসসি / স্নাতক",
-      education: "হাফেজা / আলেমা / জেনারেন / আলিয়া / MBBS",
+      education: "এসএসসি/দাখিল অথবা এইচএসসি/আলিম অথবা অনার্স/MBBS/B.Sc অথবা হাফেজা/আলেমা",
       qualities: "ধার্মিক, নামাজ ও রোজা পালনকারী, চরিত্রবান, পর্দানশীল এবং লাজুক, পরিবারমুখী, ভদ্র, ধৈর্যশীল এবং দায়িত্বশীল।"
     }
   }
