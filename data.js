@@ -42,7 +42,7 @@ const biodata = {
       height: "5 feet 4 inches",
       weight: "65 KG",
       complexion: "Bright Brown",
-      permanentAddress: "Hamin Damin, Vatharia-6720, Raigonj, Sirajganj",
+      permanentAddress: "Hamin Damin, Vatharia-6720, Raiganj, Sirajganj",
       presentAddress: "Tongi, Gazipur, Dhaka",
       maritalStatus: "Unmarried",
       personalMobile: "01771883916",
